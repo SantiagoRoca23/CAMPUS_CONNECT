@@ -1,7 +1,10 @@
 @startuml CampusConnect_Administrativo
 left to right direction
-skinparam actorStyle awesome
+skinparam actorStyle stickman
 skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam usecaseBackgroundColor #F3F6F8
+skinparam backgroundColor #FFFFFF
 
 title Campus Connect — Casos de uso Administrativos
 

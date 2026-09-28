@@ -1,0 +1,40 @@
+@startuml CampusConnect_Arquitectura
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam componentStyle rectangle
+skinparam backgroundColor #FFFFFF
+
+title Campus Connect — Arquitectura del sistema
+
+actor "Estudiante\n(Web / Móvil)" as Est
+actor "Administrativo\n/ Administrador" as Adm
+
+rectangle "Capa de presentación" {
+  component "Aplicación Web\nLaravel Blade\n(Desarrollador A)" as Web
+  component "Aplicación Móvil\nFlutter\n(Desarrollador B)" as Movil
+}
+
+rectangle "Capa de aplicación" {
+  component "Controladores Web\n+ Dashboard / Reportes\n+ Recursos" as WebCtrl
+  component "API REST v1\nLaravel Sanctum\nBearer Token" as Api
+}
+
+database "PostgreSQL\n(solicitudes, evidencias,\ncomentarios, recursos,\nseguimientos, users)" as DB
+
+Est --> Web
+Est --> Movil
+Adm --> Web
+
+Web --> WebCtrl
+Movil --> Api
+WebCtrl --> DB
+Api --> DB
+
+note right of Api
+  Endpoints compartidos:
+  login, solicitudes,
+  evidencias, comentarios,
+  seguimientos, reportes
+end note
+
+@enduml

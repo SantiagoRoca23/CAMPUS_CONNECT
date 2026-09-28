@@ -1,0 +1,21 @@
+﻿
+   PASS  Tests\Unit\UserRoleTest
+  Ô£ô roles staff se identifican correctamente                                                                     0.01s  
+
+   PASS  Tests\Feature\AuthTest
+  Ô£ô usuario puede iniciar sesion web                                                                             0.66s  
+  Ô£ô api login retorna token                                                                                      0.07s  
+
+   PASS  Tests\Feature\RecursoReporteTest
+  Ô£ô administrativo gestiona recursos y ve reportes                                                               0.07s  
+  Ô£ô estudiante no accede a reportes                                                                              0.03s  
+
+   PASS  Tests\Feature\SolicitudFlujoTest
+  Ô£ô estudiante puede crear solicitud                                                                             0.05s  
+  Ô£ô estudiante puede adjuntar evidencia                                                                          0.07s  
+  Ô£ô estudiante consulta seguimiento y comentarios                                                                0.04s  
+  Ô£ô api crear solicitud y cambiar estado                                                                         0.04s  
+
+  Tests:    9 passed (33 assertions)
+  Duration: 1.26s
+

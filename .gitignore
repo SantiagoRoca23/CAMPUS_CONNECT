@@ -16,3 +16,6 @@ mobile/.flutter-plugins-dependencies
 Thumbs.db
 *.log
 temp_repo/
+
+docs/evidencias/plantuml.jar
+
