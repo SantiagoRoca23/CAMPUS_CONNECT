@@ -1,0 +1,29 @@
+@startuml CampusConnect_Estudiante
+left to right direction
+skinparam actorStyle awesome
+skinparam shadowing false
+
+title Campus Connect — Casos de uso del Estudiante
+
+actor "Estudiante" as E
+
+rectangle "Campus Connect — Módulo Estudiante" {
+  usecase "Iniciar sesión" as Login
+  usecase "Crear solicitud" as Crear
+  usecase "Adjuntar evidencia" as Evidencia
+  usecase "Consultar seguimiento" as Seguimiento
+  usecase "Visualizar comentarios" as VerComentarios
+  usecase "Agregar comentario" as Comentar
+}
+
+E --> Login
+E --> Crear
+E --> Evidencia
+E --> Seguimiento
+E --> VerComentarios
+E --> Comentar
+
+Crear ..> Evidencia : <<extend>>
+Seguimiento ..> VerComentarios : <<include>>
+
+@enduml

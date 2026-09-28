@@ -1,0 +1,64 @@
+@startuml CampusConnect_CasosDeUso_General
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam handwritten false
+
+title Campus Connect — Diagrama de casos de uso general
+
+actor "Estudiante" as Estudiante
+actor "Administrativo" as Administrativo
+actor "Administrador" as Administrador
+
+rectangle "Campus Connect" {
+  usecase "Iniciar sesión" as UC01
+  usecase "Crear solicitud" as UC02
+  usecase "Adjuntar evidencia" as UC03
+  usecase "Consultar seguimiento" as UC04
+  usecase "Visualizar comentarios" as UC05
+  usecase "Agregar comentario" as UC06
+  usecase "Editar solicitud" as UC07
+  usecase "Eliminar solicitud" as UC08
+  usecase "Cambiar estado" as UC09
+  usecase "Asignar responsable" as UC10
+  usecase "Gestionar recursos" as UC11
+  usecase "Generar reporte" as UC12
+  usecase "Ver dashboard" as UC13
+}
+
+Estudiante --> UC01
+Estudiante --> UC02
+Estudiante --> UC03
+Estudiante --> UC04
+Estudiante --> UC05
+Estudiante --> UC06
+Estudiante --> UC13
+
+Administrativo --> UC01
+Administrativo --> UC04
+Administrativo --> UC05
+Administrativo --> UC06
+Administrativo --> UC07
+Administrativo --> UC08
+Administrativo --> UC09
+Administrativo --> UC10
+Administrativo --> UC11
+Administrativo --> UC12
+Administrativo --> UC13
+
+Administrador --> UC01
+Administrador --> UC07
+Administrador --> UC08
+Administrador --> UC09
+Administrador --> UC10
+Administrador --> UC11
+Administrador --> UC12
+Administrador --> UC13
+
+UC02 ..> UC03 : <<extend>>
+UC04 ..> UC05 : <<include>>
+UC09 ..> UC04 : <<include>>
+
+@enduml

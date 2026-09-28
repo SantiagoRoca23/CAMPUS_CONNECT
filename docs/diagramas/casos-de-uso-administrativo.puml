@@ -1,0 +1,44 @@
+@startuml CampusConnect_Administrativo
+left to right direction
+skinparam actorStyle awesome
+skinparam shadowing false
+
+title Campus Connect — Casos de uso Administrativos
+
+actor "Administrativo" as A
+actor "Administrador" as Adm
+
+rectangle "Campus Connect — Módulo Administrativo" {
+  usecase "Iniciar sesión" as Login
+  usecase "Ver dashboard" as Dash
+  usecase "Editar solicitud" as Editar
+  usecase "Eliminar solicitud" as Eliminar
+  usecase "Cambiar estado" as Estado
+  usecase "Asignar responsable" as Asignar
+  usecase "Gestionar recursos" as Recursos
+  usecase "Generar reporte" as Reporte
+  usecase "Registrar comentario interno" as Interno
+}
+
+A --> Login
+A --> Dash
+A --> Editar
+A --> Eliminar
+A --> Estado
+A --> Asignar
+A --> Recursos
+A --> Reporte
+A --> Interno
+
+Adm --> Login
+Adm --> Dash
+Adm --> Editar
+Adm --> Eliminar
+Adm --> Estado
+Adm --> Asignar
+Adm --> Recursos
+Adm --> Reporte
+
+Estado ..> Asignar : <<extend>>
+
+@enduml

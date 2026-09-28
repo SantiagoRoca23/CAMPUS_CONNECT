@@ -1,0 +1,18 @@
+# Root ignore
+backend/vendor/
+backend/node_modules/
+backend/.env
+backend/database/*.sqlite
+backend/public/storage
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/.phpunit.result.cache
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins-dependencies
+.DS_Store
+Thumbs.db
+*.log
+temp_repo/
