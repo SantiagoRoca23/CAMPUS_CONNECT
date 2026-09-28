@@ -6,7 +6,70 @@ Los diagramas usan notación UML estándar:
 - **Asociación** = línea actor ↔ caso de uso.
 - **Include / Extend** = relaciones entre casos de uso.
 
-## 1. Diagrama general del sistema
+> Archivos PlantUML listos para renderizar (recomendado para la entrega):
+> - `docs/diagramas/casos-de-uso-general.puml`
+> - `docs/diagramas/casos-de-uso-estudiante.puml`
+> - `docs/diagramas/casos-de-uso-administrativo.puml`
+>
+> En VS Code/Cursor: extensión **PlantUML** + Java, o pegar en https://www.plantuml.com/plantuml/uml/
+
+## Vista rápida (Mermaid — GitHub)
+
+```mermaid
+flowchart LR
+  subgraph actores["Actores"]
+    E(["👤 Estudiante"])
+    A(["👤 Administrativo"])
+    ADM(["👤 Administrador"])
+  end
+
+  subgraph sistema["Campus Connect"]
+    UC01((Iniciar sesión))
+    UC02((Crear solicitud))
+    UC03((Adjuntar evidencia))
+    UC04((Consultar seguimiento))
+    UC05((Visualizar comentarios))
+    UC06((Agregar comentario))
+    UC07((Editar solicitud))
+    UC08((Eliminar solicitud))
+    UC09((Cambiar estado))
+    UC10((Asignar responsable))
+    UC11((Gestionar recursos))
+    UC12((Generar reporte))
+    UC13((Ver dashboard))
+  end
+
+  E --> UC01
+  E --> UC02
+  E --> UC03
+  E --> UC04
+  E --> UC05
+  E --> UC06
+  E --> UC13
+
+  A --> UC01
+  A --> UC04
+  A --> UC05
+  A --> UC06
+  A --> UC07
+  A --> UC08
+  A --> UC09
+  A --> UC10
+  A --> UC11
+  A --> UC12
+  A --> UC13
+
+  ADM --> UC01
+  ADM --> UC07
+  ADM --> UC08
+  ADM --> UC09
+  ADM --> UC10
+  ADM --> UC11
+  ADM --> UC12
+  ADM --> UC13
+```
+
+## 1. Diagrama general del sistema (PlantUML)
 
 ```plantuml
 @startuml CampusConnect_CasosDeUso_General
